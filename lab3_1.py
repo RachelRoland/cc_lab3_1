@@ -8,9 +8,11 @@ def sums():
    # 2 and 2
    first_sum = 2 + 2
    #TODO: Store to first_sum the value of first_sum times 10
+   first_sum = (2+2)*10
 
    #TODO: Initialize a variable called secret and assign it the value 
    # of first_sum plus 2
+   secret = first_sum+2
 
    return secret
 
@@ -18,13 +20,14 @@ def string_manip(first_name):
 
    # TODO: Initialize a variable called name and assign it the 
    # parameter.
+   first_name = "rachel"
 
    # TODO: Use builtin string functions and slices to replace None with 
    # the appropriate manipulation of your name. I've done the first one.
-   all_caps = name.upper()
-   all_lowercase = None
-   first_five_letters = None
-   last_two_letters = None
+   all_caps = first_name.upper()
+   all_lowercase = first_name.lower()
+   first_five_letters = first_name[0:5]
+   last_two_letters = first_name[-2:]
 
    return [all_caps, all_lowercase, first_five_letters, last_two_letters]
 
@@ -35,8 +38,8 @@ def greeter_bot():
    # I have started it for you, but you need to modify the input and 
    # print functions.
    # Hint: to get the test to pass, the greeting should be "Hello, input name"
-   fname = input()
-   print()
+   fname = input("what is your name?")
+   print("Hello," + fname)
 
 
 def temp_calculator():
@@ -44,7 +47,22 @@ def temp_calculator():
    # TODO: Write code that prompts the user for a temperature in degrees
    # fahrenheit and prints the equivalent temperature in degrees celsius.
    # The formula is C = (F - 32) * (5/9). 
-   print()
+   temp = input("Input the  temperature you like to convert? (e.g., 45F, 102C etc.) : ")
+   degree = int(temp[:-1])
+   i_convention = temp[-1]
+
+   if i_convention.upper() == "C":
+      result = int(round((9 * degree) / 5 + 32))
+      o_convention = "Fahrenheit"
+   elif i_convention.upper() == "F":
+      result = int(round((degree - 32) * 5 / 9))
+      o_convention = "Celsius"
+   else:
+      print("Input proper convention.")
+      quit()
+      print("The temperature in", o_convention, "is", result, "degrees.")
+
+
 
 def equitable_bill_splitter():
    
