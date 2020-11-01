@@ -8,7 +8,7 @@ def sums():
    # 2 and 2
    first_sum = 2 + 2
    #TODO: Store to first_sum the value of first_sum times 10
-   first_sum = (2+2)*10
+   first_sum = first_sum * 10
 
    #TODO: Initialize a variable called secret and assign it the value 
    # of first_sum plus 2
@@ -20,13 +20,14 @@ def string_manip(first_name):
 
    # TODO: Initialize a variable called name and assign it the 
    # parameter.
-   first_name = "rachel"
+   name = first_name
+   first_name = "Dylan"
 
    # TODO: Use builtin string functions and slices to replace None with 
    # the appropriate manipulation of your name. I've done the first one.
    all_caps = first_name.upper()
    all_lowercase = first_name.lower()
-   first_five_letters = first_name[0:5]
+   first_five_letters = first_name[:5]
    last_two_letters = first_name[-2:]
 
    return [all_caps, all_lowercase, first_five_letters, last_two_letters]
@@ -39,7 +40,7 @@ def greeter_bot():
    # print functions.
    # Hint: to get the test to pass, the greeting should be "Hello, input name"
    fname = input("what is your name?")
-   print("Hello," + fname)
+   print("Hello, " + fname + "!")
 
 
 def temp_calculator():
@@ -47,20 +48,9 @@ def temp_calculator():
    # TODO: Write code that prompts the user for a temperature in degrees
    # fahrenheit and prints the equivalent temperature in degrees celsius.
    # The formula is C = (F - 32) * (5/9). 
-   temp = input("Input the  temperature you like to convert? (e.g., 45F, 102C etc.) : ")
-   degree = int(temp[:-1])
-   i_convention = temp[-1]
-
-   if i_convention.upper() == "C":
-      result = int(round((9 * degree) / 5 + 32))
-      o_convention = "Fahrenheit"
-   elif i_convention.upper() == "F":
-      result = int(round((degree - 32) * 5 / 9))
-      o_convention = "Celsius"
-   else:
-      print("Input proper convention.")
-      quit()
-      print("The temperature in", o_convention, "is", result, "degrees.")
+   f = input("What is the temperature that you want to convert?")
+   c = (f-32) * (5/9) 
+   print(c)
 
 
 
